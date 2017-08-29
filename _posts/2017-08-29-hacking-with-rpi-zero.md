@@ -3,7 +3,9 @@ layout: post
 title: Hacking with a Raspberry Pi Zero (W)
 ---
 
-Headless Setup and P4wnP1 Tutorial
+## Headless Setup and P4wnP1 Tutorial
+
+Now this is one of the better “hacking” source code repository tools I have found for the raspberry pi, rivaled largely by PoisonTap created by Samy Kamkar. Although, P4wnP1 (by MaMe82) establishes many more features when compared to PoisonTap, it’s ability to install backdoors, create SSH’able wifi hotspots for remote control, and ability to run ducky scripts on boot make it excellent for this tutorial.
 
 ---
 
@@ -92,12 +94,14 @@ You should see many different options and such, once you have read the documenta
 At the bottom of the file, you should see something similar to this:
 
 ```PAYLOAD=network_only.txt
+
 #PAYLOAD=hid_keyboard.txt```
 
 Go ahead and comment out the `network_only.txt` payload and uncomment the `hid_keyboard.txt`
 So that your end result will look something like this:
 
 ```#PAYLOAD=network_only.txt
+
 PAYLOAD=hid_keyboard.txt```
 
 You’re done!
