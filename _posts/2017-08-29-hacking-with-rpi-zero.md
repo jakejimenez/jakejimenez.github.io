@@ -32,22 +32,30 @@ First, go ahead and open Etcher. Select your Jessie Lite image and flash that to
 
 ---
 
-2. Once your image has been flashed, unplug the SD card and plug it back in. The SD Card should be named “boot”, go ahead and open that.
+* Once your image has been flashed, unplug the SD card and plug it back in. The SD Card should be named “boot”, go ahead and open that.
 Now, in order to SSH into our Pi locally, we are going to need to do some initial setup. First open Notepad or TextEdit (or any other text editor) and create a file called “ssh” with no extension or content. Save that to your boot SD card. Next, you’re going to need to edit your “cmdline.txt” file. To make this easier I have provided everything you need to copy and paste, so go ahead and delete everything in “cmdline.txt” and copy and paste the code below.
+
 ```dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait modules-load=dwc2,g_ether quiet init=/usr/lib/raspi-config/init_resize.sh```
+
 Alright, now we are going to get the last part done for our headless setup before we move on to booting up our Pi. This leads us to the “config.txt” file in our boot SD card, go ahead and open this file and scroll all the way to the bottom. When there, under where it says
+
 ```dtparam=audio-on```
+
 add
+
 ```dtoverlay=dwc2```
+
 So in the end the bottom of your file will look like this:
+
 ```dtparam=audio-on
 dtoverlay=dwc2```
+
 You’re done with the this step! Now for step 3.
 
 
 ---
 
-3. Unplug your micro SD card and plug it into your Pi Zero, once done, plug the Pi into your computer using the OTG cable. Your computer should register it within 15 seconds or so, then give the pi around 30 sec — 1 min for the Pi to boot up.
+* Unplug your micro SD card and plug it into your Pi Zero, once done, plug the Pi into your computer using the OTG cable. Your computer should register it within 15 seconds or so, then give the pi around 30 sec — 1 min for the Pi to boot up.
 Go ahead and open up PuTTy or Terminal (for Mac) and ssh into your Pi by typing in:
 ```raspberrypi.local```
 or
@@ -68,7 +76,7 @@ Now that internet has been obtained. It’s time for our next step.
 
 ---
 
-4. Now it’s time to get the software side of our Pi setup. Go ahead and run
+* Now it’s time to get the software side of our Pi setup. Go ahead and run
 ```sudo apt-get update```
 and wait for that to finish. We now need to get our repository that, but in order to do that we need git. In order to do that we need to run the following command.
 ```sudo apt-get install git```
@@ -82,12 +90,16 @@ Okay! You’re back into your Pi after running the install, now we need to setup
 ```sudo nano setup.cfg```
 You should see many different options and such, once you have read the documentation fully, you can go ahead and run through those options but for now lets focus on the bottom portion of the `setup.cfg` file.
 At the bottom of the file, you should see something similar to this:
+
 ```PAYLOAD=network_only.txt
 #PAYLOAD=hid_keyboard.txt```
+
 Go ahead and comment out the `network_only.txt` payload and uncomment the `hid_keyboard.txt`
 So that your end result will look something like this:
+
 ```#PAYLOAD=network_only.txt
 PAYLOAD=hid_keyboard.txt```
+
 You’re done!
 Now that everything is done, all there is to do is shutdown the Pi safely and plug it into a computer. I’ve found that it’s easier to test on a Windows computer, so I’d suggest using that first.
 ```sudo shutdown now```
