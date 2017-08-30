@@ -3,4 +3,6 @@ layout: page
 title: About
 ---
 
-Introduce yourself here... so people will know who you are and what you do.. blah..blah..blah..
+HF: TheAnonGOAT
+Twitter: @jakejim0
+GitHub: r00t1000
