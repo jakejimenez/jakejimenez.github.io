@@ -22,7 +22,7 @@ Software List:
 2. P4wnP1 by MaMe82 [Link](https://github.com/mame82/P4wnP1.git)
 3. Etcher [Link](https://etcher.io/)
 
-Headless Setup
+###Headless Setup
 
 
 ---
@@ -34,7 +34,8 @@ First, go ahead and open Etcher. Select your Jessie Lite image and flash that to
 
 ---
 
-* Once your image has been flashed, unplug the SD card and plug it back in. The SD Card should be named “boot”, go ahead and open that.
+Once your image has been flashed, unplug the SD card and plug it back in. The SD Card should be named “boot”, go ahead and open that.
+
 Now, in order to SSH into our Pi locally, we are going to need to do some initial setup. First open Notepad or TextEdit (or any other text editor) and create a file called “ssh” with no extension or content. Save that to your boot SD card. Next, you’re going to need to edit your “cmdline.txt” file. To make this easier I have provided everything you need to copy and paste, so go ahead and delete everything in “cmdline.txt” and copy and paste the code below.
 
 ```dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait modules-load=dwc2,g_ether quiet init=/usr/lib/raspi-config/init_resize.sh```
@@ -57,7 +58,7 @@ You’re done with the this step! Now for step 3.
 
 ---
 
-* Unplug your micro SD card and plug it into your Pi Zero, once done, plug the Pi into your computer using the OTG cable. Your computer should register it within 15 seconds or so, then give the pi around 30 sec — 1 min for the Pi to boot up.
+Unplug your micro SD card and plug it into your Pi Zero, once done, plug the Pi into your computer using the OTG cable. Your computer should register it within 15 seconds or so, then give the pi around 30 sec — 1 min for the Pi to boot up.
 Go ahead and open up PuTTy or Terminal (for Mac) and ssh into your Pi by typing in:
 ```raspberrypi.local```
 or
@@ -94,14 +95,12 @@ You should see many different options and such, once you have read the documenta
 At the bottom of the file, you should see something similar to this:
 
 ```PAYLOAD=network_only.txt
-
 #PAYLOAD=hid_keyboard.txt```
 
 Go ahead and comment out the `network_only.txt` payload and uncomment the `hid_keyboard.txt`
 So that your end result will look something like this:
 
 ```#PAYLOAD=network_only.txt
-
 PAYLOAD=hid_keyboard.txt```
 
 You’re done!
