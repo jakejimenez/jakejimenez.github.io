@@ -1,23 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt">
-
+<html>
   {% include head.html %}
-
-    <body>
-      <div class="container">
-
-        {% include header.html %}
-
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2">
-            <main>
-            {{ content }}
-            </main>
-          </div>
-        </div>
-
-        {% include footer.html %}
-
+  <body>
+    <div class="page-content">
+      {{ content }}
+      <div class="copyright">
+        <p>&copy; {{ site.time | date: '%Y' }} <a href="{{ site.baseurl | prepend: site.url }}" title="{{ site.description }}"><strong>{{ site.title }}</strong></a> ― <a href="http://github.com/heiswayi/textlog" title="a minimalist Jekyll theme for documentation">Textlog theme</a> by <a href="http://heiswayi.github.io">Heiswayi Nrird</a></p>
       </div>
-    </body>
+    </div>
+    {% include google_analytics.html %}
+  </body>
 </html>

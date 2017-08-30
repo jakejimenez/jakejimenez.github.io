@@ -1,16 +1,6 @@
 ---
 layout: page
 title: About
-permalink: /about/
 ---
 
-Web Dev / Full Stack
-
-### More Information
-
-N/A
-
-### Contact me
-
-HF: TheAnonGOAT
-@jakejim0
+Introduce yourself here... so people will know who you are and what you do.. blah..blah..blah..
