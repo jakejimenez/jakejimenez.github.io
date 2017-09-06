@@ -18,7 +18,7 @@ Equipment List:
 4. Ability to plug Micro SD Card into computer.
 
 Software List:
-1. Raspbian Jessie Lite [Link](http://downloads.raspberrypi.org/raspbian_lite/images/)
+1. Raspbian Jessie Lite [Link](http://downloads.raspberrypi.org/raspbian_lite/images/) or Raspbian Stretch Lite [Link](https://www.raspberrypi.org/downloads/raspbian/)
 2. P4wnP1 by MaMe82 [Link](https://github.com/mame82/P4wnP1.git)
 3. Etcher [Link](https://etcher.io/)
 
@@ -84,7 +84,7 @@ Now that internet has been obtained. It’s time for our next step.
 and wait for that to finish. We now need to get our repository that, but in order to do that we need git. In order to do that we need to run the following command.
 ```sudo apt-get install git```
 Once git is installed just clone the P4wnP1 directory in the root directory of your P1.
-```git clone https://github.com/mame82/P4wnP1.git```
+```git clone --recursive https://github.com/mame82/P4wnP1```
 We are almost done! All we need to do now is test this bad boy out. So go ahead and
 ```cd P4wnP1 && ./install.sh```
 Give that some time to run, it will take a while so go outside or idk, walk your dog. Once it is done, unplug it and plug it back in, SSH back into it and continue from this point.
