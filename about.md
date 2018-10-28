@@ -3,6 +3,5 @@ layout: page
 title: About
 ---
 
-HF: TheAnonGOAT
-Twitter: @jakejim0
+Twitter: @jakejimenez0
 GitHub: r00t1000
