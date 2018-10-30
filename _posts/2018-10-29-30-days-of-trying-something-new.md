@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hacking with a Raspberry Pi Zero (W)
+title: 30 days of trying something new
 ---
 
 ## full list:
